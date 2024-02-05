@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Learning - OnlineExplorerHub</title>
+    <link rel="stylesheet" href="learnercss.css">
+</head>
+<body>
+    <header>
+        <h1>Explore Learning</h1>
+        <p>Discover a wealth of resources and courses to enhance your knowledge and skills.</p>
+    </header>
+    <button onclick="goHome()" style="background-color:#333;color: azure;padding: 10px;">Home</button>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <button onclick="openPopup('Flutter', 'flutter-final.html')">Flutter</button>
+            <div id="flutter-notes" class="notes hidden">
+                <p>Flutter is an open-source UI software development toolkit.</p>
+                <p>Learn how to build cross-platform mobile apps with Flutter.</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <button onclick="showNotes('uxdesign')">UX Design</button>
+            <div id="uxdesign-notes" class="notes hidden">
+                <p>User Experience (UX) design focuses on creating user-friendly interfaces.</p>
+                <p>Explore the principles and practices of UX design.</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <button onclick="showNotes('pythondev')">Python Developer</button>
+            <div id="pythondev-notes" class="notes hidden">
+                <p>Python is a versatile programming language used in web development, data analysis, and more.</p>
+                <p>Start your journey to becoming a Python developer.</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <button onclick="showNotes('javadev')">Java Developer</button>
+            <div id="javadev-notes" class="notes hidden">
+                <p>Java is a popular programming language for building scalable applications.</p>
+                <p>Explore Java development and its various applications.</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <button onclick="showNotes('sql')">SQL</button>
+            <div id="sql-notes" class="notes hidden">
+                <p>SQL (Structured Query Language) is used to manage and query relational databases.</p>
+                <p>Learn SQL for data management and analysis.</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <button onclick="showNotes('nodejs')">Node.js</button>
+            <div id="nodejs-notes" class="notes hidden">
+                <p>Node.js is a JavaScript runtime for building server-side applications.</p>
+                <p>Discover the power of Node.js in web development.</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <button onclick="showNotes('dataanalyst')">Data Analyst</button>
+            <div id="dataanalyst-notes" class="notes hidden">
+                <p>Data analysts use data to gain insights and make data-driven decisions.</p>
+                <p>Learn the skills required for a career in data analysis.</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <button onclick="showNotes('Blockchain')">Blockchain</button>
+            <div id="Blockchain-notes" class="notes hidden">
+                <p>Blockchain is a distributed ledger technology that underlies cryptocurrencies like Bitcoin.</p>
+                <p>It is a secure and transparent way to record transactions across multiple computers, making it tamper-resistant.</p>
+                <p>Learn about the fundamentals of blockchain technology and its various applications.</p>
+            </div>
+        </div>
+        
+
+    </div>
+
+    <footer>
+        <p>&copy; 2023 OnlineExplorerHub</p>
+    </footer>
+
+    <script>
+        // JavaScript function to show/hide notes
+        function showNotes(topic) {
+            const notes = document.getElementById(topic + '-notes');
+            if (notes) {
+                notes.classList.toggle('hidden');
+            }
+        }
+        
+       function openPopup(topic, url) {
+        // Open a new pop-up window with the provided URL
+            window.location.href='flutter-final.html';
+
+        }
+        function goHome() {
+        window.location.href="Home.html";
+    }
+
+    </script>
+    
+</body>
+</html>

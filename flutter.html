@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flutter Roadmap - Explore Learning</title>
+    <style>
+        /* CSS code here */
+        /* Reset some default styles for better consistency */
+        body, h1, p, ul, li, button, .notes {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Apply basic styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        nav ul {
+            list-style: none;
+            text-align: center;
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .grid-container {
+           display :grid; 
+           grid-template-columns :repeat(2 ,1fr); 
+           gap :20px; 
+           text-align:center; 
+           margin-top :20px; 
+           
+        }
+          /* CSS code here */
+/* Reset some default styles for better consistency */
+body, h1, p, ul, li, button, .notes {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply basic styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color:black;
+    color: #333;
+}
+
+header {
+    background-color:#333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.grid-container {
+   display :grid; 
+   grid-template-columns :repeat(2 ,1fr); 
+   gap :20px; 
+   text-align:center; 
+   margin-top :20px; 
+  
+    
+    
+}
+
+.grid-item {
+   background-color:#fff; 
+   padding :20px; 
+   border-radius :5px; 
+   box-shadow :0 0 10px rgba(0,0,0,.2); 
+    
+}
+
+
+.grid-item button{
+background-color:#333; 
+color:#fff; 
+padding :10px 20px; 
+border:none; 
+border-radius :5px; 
+cursor:pointer;
+
+}
+        
+ .grid-item a{
+     text-decoration:none ;
+     color:#333 ;  
+     font-weight:bold ;  
+ }
+         
+         
+
+.grid-item button:hover{
+background-color:#007bff;
+
+}
+        
+#description, #websites, #youtube-channels, #online-courses {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+.grid-item.dark-mode {
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.grid-item.dark-mode button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.grid-item.dark-mode button:hover {
+    background-color: #333;
+}
+#description, #websites, #youtube-channels, #online-courses {
+   background-color:#f0f0f0; 
+   padding :20px ; 
+   border-radius :5px ;  
+   box-shadow :0 0 10px rgba(0 ,0 ,0 ,.2); 
+   margin-bottom :20px ; 
+} 
+           
+           
+    
+            
+        
+
+        .grid-item {
+           background-color:#fff; 
+           padding :20px; 
+           border-radius :5px; 
+           box-shadow :0 0 10px rgba(0,0,0,.2); 
+            
+        }
+
+
+        .grid-item button{
+        background-color:#333; 
+        color:#fff; 
+        padding :10px 20px; 
+        border:none; 
+        border-radius :5px; 
+        cursor:pointer;
+
+        }
+        
+         .grid-item a{
+         text-decoration:none;
+         color: #333;
+         font-weight:bold;
+         }
+         
+         
+
+        .grid-item button:hover{
+        background-color:#007bff;
+
+        }
+        .upper-section {
+    text-align: center;
+    color: #fff;
+}
+
+.upper-section img {
+    display: inline-block;
+}
+        
+        
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Flutter Roadmap</h1>
+        <p>Learn how to build cross-platform mobile apps with Flutter.</p>
+    </header>
+    <button onclick="goBack()" style="background-color:#333;color: azure;padding: 10px;">Back</button>
+    <button onclick="goToTools()" style="background-color:#333;color: azure;padding: 10px;">Tools</button>
+
+    <div class="upper-section">
+        <img src="images/flutter.jpg" alt="Image" style="width: 10%;">
+        <h2>Flutter</h2>
+    </div>
+
+    <div class="content">
+        
+       <section id="description">
+            <h2>About Flutter</h2>
+            <p>Flutter is an open-source UI software development toolkit created by Google. It allows you to build beautiful and fast native applications for iOS, Android, web, and desktop from a single codebase.</p>
+
+            <h2>Why Use Flutter?</h2>
+            <ul>
+                <li>Cross-platform development: With Flutter, you can write code once and deploy it on multiple platforms, saving time and effort.</li>
+                <li>Fast performance: Flutter's architecture enables high-performance rendering and smooth animations.</li>
+                <li>Hot Reload: The hot reload feature allows you to see the changes in your app instantly without restarting the app.</li>
+                <li>Rich UI: Flutter provides a rich set of pre-built widgets and allows you to create custom UI elements easily.</li>
+                <li>Strong community support: Flutter has a large and active community, which means you can find plenty of resources, libraries, and packages to help you in your development journey.</li>
+            </ul>
+        </section>
+
+        <section id="websites">
+            <h2>Websites to Learn Flutter</h2>
+            <ul>
+                <li><a href="https://flutter.dev/">Flutter Official Website</a></li>
+                <li><a href="https://www.udemy.com/topic/flutter/">Udemy - Flutter Courses</a></li>
+                <li><a href="https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart">The App Brewery - Flutter Development Bootcamp</a></li>
+                <!-- Add more websites here -->
+            </ul>
+        </section>
+
+        <section id="youtube-channels">
+            <h2>YouTube Channels to Learn Flutter</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/c/TheNetNinja">The Net Ninja</a></li>
+                <li><a href="https://www.youtube.com/c/ResoCoder">Reso Coder</a></li>
+                <li><a href="https://www.youtube.com/c/FilledStacks">FilledStacks</a></li>
+                <!-- Add more YouTube channels here -->
+            </ul>
+        </section>
+
+        <section id="online-courses">
+            <h2>Online Courses on Flutter</h2>
+            <ul>
+                <li><a href="https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905">Udacity - Build Native Mobile Apps with Flutter</a></li>
+                <li><a href="https://www.coursera.org/specializations/flutter">Coursera - Flutter Specialization</a></li>
+                <li><a href="https://www.pluralsight.com/paths/flutter">Pluralsight - Flutter Learning Path</a></li>
+                <!-- Add more online courses here -->
+            </ul>
+        </section>
+
+
+    </div>
+
+    <footer>
+        <p>&copy; 2023 OnlineExplorerHub</p>
+    </footer>
+
+    <script>
+        function goBack() {
+            window.location.href="learner.html";
+        }
+
+        function goToTools() {
+            // Replace the URL with the desired tools page
+            window.location.href = "tools.html";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat Application</title>
+	<style>
+        * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+}
+
+.chat-container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+header {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.chat-box {
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.message {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.profile img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.reply {
+	margin-left: 60px;
+}
+
+.message p {
+	flex: 1;
+}
+
+.reply-btn {
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.reply-btn:hover {
+	background-color: #3e8e41;
+}
+
+.message-form {
+	display: flex;
+	margin-top: 20px;
+}
+
+.message-form input[type="text"] {
+	flex: 1;
+	padding: 10px;
+	border: none;
+	border-radius: 5px 0 0 5px;
+}
+
+.message-form button[type="submit"] {
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	padding: 10px;
+	border-radius: 0 5px 5px 0;
+	cursor: pointer;
+}
+
+.message-form button[type="submit"]:hover {
+	background-color: #3e8e41;
+}
+    </style>
+</head>
+<body>
+	<div class="chat-container">
+		<header>
+			<h1>Chat Application</h1>
+		</header>
+		<main>
+			<div class="chat-box">
+				<div class="message">
+					<div class="profile">
+						<img src="images/flutter.jpg" alt="Profile Picture">
+						<h3>John Doe</h3>
+					</div>
+					<p>Hello, can anyone help me with my coding problem?</p>
+					<button class="reply-btn">Reply</button>
+				</div>
+				<div class="reply">
+					<div class="profile">
+						<img src="images/logo.png" alt="Profile Picture">
+						<h3>Jane Smith</h3>
+					</div>
+					<p>Sure, what's the problem?</p>
+				</div>
+			</div>
+			<form class="message-form">
+				<input type="text" placeholder="Enter your message...">
+				<button type="submit">Send</button>
+			</form>
+		</main>
+	</div>
+	<script >
+        const form = document.querySelector('.message-form');
+const messageInput = document.querySelector('input[type="text"]');
+const chatBox = document.querySelector('.chat-box');
+
+form.addEventListener('submit', (e) => {
+	e.preventDefault();
+	const message = messageInput.value;
+	if (message.trim() !== '') {
+		const newMessage = document.createElement('div');
+		newMessage.classList.add('message');
+		newMessage.innerHTML = `
+			<div class="profile">
+				<img src="images/flutter.jpg" alt="Profile Picture">
+				<h3>John Doe</h3>
+			</div>
+			<p>${message}</p>
+			<button class="reply-btn">Reply</button>
+		`;
+		chatBox.appendChild(newMessage);
+		messageInput.value = '';
+	}
+});
+
+chatBox.addEventListener('click', (e) => {
+	if (e.target.classList.contains('reply-btn')) {
+		const replyBox = document.createElement('div');
+		replyBox.classList.add('reply');
+		replyBox.innerHTML = `
+			<div class="profile">
+				<img src="images/logo.png" alt="Profile Picture">
+				<h3>Jane Smith</h3>
+			</div>
+			<p>Enter your reply here...</p>
+		`;
+		e.target.parentElement.appendChild(replyBox);
+		e.target.remove();
+	}
+});
+    </script>
+</body>
+</html>

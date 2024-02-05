@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnlineExplorerHub</title>
+   <style>
+        /* Common styles for both light and dark mode */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            
+            font-size: 36px;
+            font-family:cursive;
+            margin: 0;
+            
+            
+        }
+        h3 {
+            
+            font-size: 36px;
+            margin-top: 5px;
+            margin-bottom: 2px;
+        
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #fff;
+        }
+
+        header.dark-mode {
+            background-color: #333;
+        }
+
+        .container.dark-mode {
+            background-color: #222;
+        }
+
+        /* Section styles */
+        .section {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        /* Button styles */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        /* Add more styles for your content here */
+        .navbar {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           background-color: #1a1a1a;
+           padding: 20px;
+        }
+
+        .logo img {
+           height: 50px;
+           margin-right: 10px;
+        }
+
+        .logo {
+           display: flex;
+           align-items: center;
+        }
+
+       .nav-links {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           list-style: none;
+           margin: 0;
+           padding: 0;
+        }
+
+        .nav-links li {
+           margin: 0 10px;
+           padding: 0;
+        }
+
+       .nav-links a {
+           color: #fff;
+           text-decoration: none;
+           font-size: 18px;
+           font-weight: bold;
+           text-transform: uppercase;
+           padding: 10px 10px;
+           letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+           background-color:#007bff;
+           
+           
+        }
+
+     
+
+
+    </style>
+</head>
+<body class="dark-mode">
+    <header class="dark-mode">
+        <nav class="navbar">
+            <div class="logo">
+              <img src="images/logo.png" alt="OnlineExplorerHub Logo">
+              <h1>OnlineExplorer</h1>
+            </div>
+            
+            <ul class="nav-links">
+              <li><a href="home.html" >Home</a></li>
+              <li><a href="learner.html" >Learners</a></li>
+              <li><a href="#">Developers</a></li>
+              <li><a href="chat.html">Connect</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="login.html">Login</a></li>
+            </ul>
+          </nav>
+          <h3>Discover &emsp13;Develop &emsp13; Discuss</h3>
+        
+    </header>
+
+    <div class="container dark-mode">
+        <div class="section">
+            <h2>Learn and Grow</h2>
+            <p>Discover a wealth of resources and courses to enhance your knowledge and skills.</p>
+            <a href="learner.html" class="button">Explore Learning</a>
+        </div>
+
+        <div class="section">
+            <h2>Developer Tools</h2>
+            <p>Access a collection of essential tools and utilities for developers.</p>
+            <a href="tools.html" class="button">Explore Tools</a>
+        </div>
+
+        <div class="section">
+            <h2>Connect with Others</h2>
+            <p>Join a community of like-minded individuals and collaborate on exciting projects.</p>
+            <a href="chat.html" class="button">Connect with Others</a>
+        </div>
+    </div>
+
+    <!-- Add more sections and content as needed -->
+
+</body>
+</html>

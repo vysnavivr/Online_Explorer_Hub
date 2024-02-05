@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 0 50px;
+}
+
+.left {
+    text-align: center;
+    
+}
+
+.left h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.left img {
+    width: 60%;
+    
+}
+
+.right {
+    background-color: #333;
+    padding: 50px;
+    border-radius: 10px;
+    width: 400px;
+    
+}
+
+.right h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+
+p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+a {
+    color: #fff;
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h1>OnlineExplorerHub</h1>
+            <img src="images/login1.jpg" alt="Welcome Image">
+        </div>
+        <div class="right">
+            <h2>Sign Up</h2>
+            <form id="signupForm"   method="POST">
+                
+                <input type="text" id="usernameInput" name="username" placeholder="username" required>
+                
+                <input type="email" id="emailInput" name="email" placeholder="email" required>
+                
+                <input type="password" id="passwordInput" name="password" placeholder="password" required>
+                <button id="signupButton" type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="login.html">Login</a></p>
+        </div>
+    </div>
+
+
+    <!-- <script>
+        const signupButton = document.getElementById('loginButton');
+        const signupForm = document.getElementById('signupForm');
+        const usernameInput = document.getElementById('usernameInput');
+        const emailInput = document.getElementById('emailInput');
+        const passwordInput = document.getElementById('passwordInput');
+
+ 
+    </script> -->
+    <script type="module">
+         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+        import { getDatabase , set , ref } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+         document.addEventListener("DOMContentLoaded", function () {
+         const signupButton = document.getElementById('signupButton');
+       
+    
+      
+        const firebaseConfig = {
+          apiKey: "AIzaSyDYMwi4BTFrQ80lVqYphhC2x0OMXj9fwx4",
+          authDomain: "onlineexplorer-cf117.firebaseapp.com",
+          databaseURL: "https://onlineexplorer-cf117-default-rtdb.firebaseio.com",
+          projectId: "onlineexplorer-cf117",
+          storageBucket: "onlineexplorer-cf117.appspot.com",
+          messagingSenderId: "504187988278",
+          appId: "1:504187988278:web:bd8c5240942faadbf7eb97"
+        };
+      
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth();
+       
+      
+        signupButton.addEventListener('click',(e)=>{
+            e.preventDefault();
+            var email = document.getElementById('emailInput').value
+            var password = document.getElementById('passwordInput').value
+            var username = document.getElementById('usernameInput').value
+    
+            createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        set(ref(database,'users/' + user.uid),{
+            username: username,
+            email: email,
+            
+        })
+        alert('User Created');
+        window.location.href = 'login.html';
+            
+
+      })
+
+    .catch((error) => {
+        console.error('Firebase Error:', error.code, error.message);
+        alert('Error: ' + error.message);
+      });
+      
+    
+        });
+    });
+      </script>
+
+</body>
+
+</html>

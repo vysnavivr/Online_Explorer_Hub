@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Connect With Others</title>
+	<style>
+        * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color:black;
+}
+
+.chat-container {
+	max-width: 1000px;
+	margin: 100px auto;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+
+h1 {
+    font-size: 36px;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+main {
+	padding: 20px;
+}
+
+.chat-box {
+	height: 330px;
+	overflow-y: scroll;
+}
+
+.message {
+	margin-bottom: 20px;
+}
+
+.profile {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.profile img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.profile h3 {
+	font-size: 18px;
+	font-weight: normal;
+}
+.replyprofile {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+
+    
+}
+.replyprofile img {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.replyprofile h3 {
+	font-size: 15px;
+	font-weight: normal;
+}
+form {
+	display: flex;
+	margin-top: 20px;
+}
+
+textarea {
+	flex: 1;
+	padding: 10px;
+	font-size: 16px;
+	border: none;
+	border-radius: 5px;
+	resize: none;
+}
+
+button {
+	padding: 10px 20px;
+	font-size: 16px;
+	background-color: #333;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Connect With Others</h1>
+        <p>Join the Community: Connect with Others and Expand Your Network</p>
+    </header>
+    <button onclick="goHome()" style="background-color:#333;color: azure;padding: 10px;">Home</button>
+    <button onclick="goBack()" style="background-color:#333;color: azure;padding: 10px;">Back</button>
+    <div class="page1">
+	<div class="chat-container">
+		
+		<main>
+			<div class="chat-box">
+				<div class="message">
+					<div class="profile">
+						<img src="images/profile2.jpg" alt="Profile Picture">
+						<b>John</b>
+					</div>
+					<p>What is the difference between RDBMS and DBMS</p>
+				</div>
+				<div class="message">
+					<div class="profile">
+						<img src="images/profile1.jpg" alt="Profile Picture">
+						<b>Stuart</b>
+					</div>
+					<p>Is it corrected to say that ELB balances at Node level and Kube-Proxy at Cluster Level?</p>
+				</div>
+			</div>
+			<form>
+				<textarea placeholder="Type your message here"></textarea>
+				<button type="submit">Send</button>
+			</form>
+		</main>
+	</div>
+</body>
+<script>
+    // Code for sending message
+const form = document.querySelector('form');
+const textarea = document.querySelector('textarea');
+const chatBox = document.querySelector('.chat-box');
+
+form.addEventListener('submit', (e) => {
+	e.preventDefault();
+	if (textarea.value.trim() === '') {
+		return;
+	}
+	const message = document.createElement('div');
+	message.classList.add('message');
+	message.innerHTML = `
+		<div class="profile">
+			<img src="images/profile4.jpg" alt="Profile Picture">
+			<b>Elsa</b>
+		</div>
+		<p>${textarea.value}</p>
+	`;
+	chatBox.appendChild(message);
+	textarea.value = '';
+});
+
+// Code for replying to message
+const messages = document.querySelectorAll('.message');
+
+messages.forEach(message => {
+	const replyButton = document.createElement('button');
+	replyButton.innerText = 'Reply';
+	replyButton.addEventListener('click', () => {
+		const replyForm = document.createElement('form');
+		const replyTextarea = document.createElement('textarea');
+		const replyButton = document.createElement('button');
+		replyButton.innerText = 'Send';
+		replyForm.appendChild(replyTextarea);
+		replyForm.appendChild(replyButton);
+		message.appendChild(replyForm);
+		replyButton.addEventListener('click', (e) => {
+			e.preventDefault();
+			if (replyTextarea.value.trim() === '') {
+				return;
+			}
+			const replyMessage = document.createElement('div');
+			replyMessage.classList.add('message');
+			replyMessage.innerHTML = `
+				<div class="replyprofile">
+					<img src="images/profile3.png" alt="Profile Picture">
+					<h3>user</h3>
+				</div>
+				<p>${replyTextarea.value}</p>
+			`;
+			message.appendChild(replyMessage);
+			replyForm.remove();
+		});
+	});
+	message.appendChild(replyButton);
+});
+
+function goBack() {
+        window.location.href="learner.html";
+    }
+    function goHome() {
+        window.location.href="Home.html";
+    }
+    function goToTools() {
+        // Replace the URL with the desired tools page
+        window.location.href = "tools.html";
+    }
+</script>
+</html>
